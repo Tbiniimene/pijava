@@ -93,16 +93,17 @@
                            <children>
                               <TableView fx:id="table" layoutX="10.0" layoutY="115.0" prefHeight="272.0" prefWidth="602.0">
                                 <columns>
-                                  <TableColumn prefWidth="59.200010776519775" text="Id" />
-                                  <TableColumn prefWidth="60.800048828125" text="Nom" />
-                                    <TableColumn prefWidth="68.79998779296875" text="Start" />
-                                    <TableColumn prefWidth="69.60003662109375" text="End" />
-                                    <TableColumn text="Description" />
-                                    <TableColumn prefWidth="84.800048828125" text="Stands" />
-                                    <TableColumn prefWidth="73.60009765625" text="Adress" />
-                                    <TableColumn prefWidth="110.39987182617188" text="IMG" />
+                                  <TableColumn fx:id="id_evenement" prefWidth="59.200010776519775" text="Id" />
+                                  <TableColumn fx:id="nom" prefWidth="60.800048828125" text="Nom" />
+                                    <TableColumn fx:id="date_deb" prefWidth="68.79998779296875" text="Start" />
+                                    <TableColumn fx:id="date_fin" prefWidth="69.60003662109375" text="End" />
+                                    <TableColumn fx:id="description" text="Description" />
+                                    <TableColumn fx:id="nb_stand" prefWidth="84.800048828125" text="Stands" />
+                                    <TableColumn fx:id="addresse" prefWidth="73.60009765625" text="Adress" />
+                                    <TableColumn fx:id="img" prefWidth="110.39987182617188" text="IMG" />
                                 </columns>
                               </TableView>
+                              <Button fx:id="id" layoutX="125.0" layoutY="483.0" mnemonicParsing="false" onAction="#addEvent" text="Add" />
                            </children></AnchorPane>
                   </content>
                 </Tab>
