@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AdminController">
    <children>
       <AnchorPane prefHeight="506.0" prefWidth="180.0" style="-fx-background-color: #1d2026;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -68,7 +68,7 @@
                         <Circle fill="WHITE" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
                      </graphic>
                   </Button>
-                  <Button fx:id="AmiraBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#AmiraScreen" prefHeight="40.0" style="-fx-background-color: #1d2026;" text="Eli bech te5taro amira" textFill="#e5e2e2">
+                  <Button fx:id="AmiraBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#AmiraScreen" prefHeight="40.0" style="-fx-background-color: #1d2026;" text="blog" textFill="#e5e2e2">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
