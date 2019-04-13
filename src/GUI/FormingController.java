@@ -6,14 +6,18 @@
 package GUI;
 
 import Entity.Formateur;
+import Entity.Formation;
 import Entity.ListDataFormateur;
+import Entity.ListDataformation;
 import Service.FormateurDao;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -25,6 +29,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 /**
@@ -77,7 +82,29 @@ public class FormingController implements Initializable {
       private int numtel;
     private int i,a;
     private String tell;
-    
+    @FXML
+    private TableView<Formation> tableformation;
+    @FXML
+    private TableColumn<Formation, String> nameColumn;
+    @FXML
+    private TableColumn<Formation, Integer> formateurColumn;
+    @FXML
+    private TableColumn<Formation, String> typeColumn;
+    @FXML
+    private TableColumn<Formation, Integer> priceColumn;
+    @FXML
+    private TableColumn<Formation, String> addressColumn;
+    @FXML
+    private TableColumn<Formation, Date> datedebColumn;
+    @FXML
+    private TableColumn<Formation, Date> dateendColumn;
+    @FXML
+    private TableColumn<Formation, Integer> numberColumn;
+    @FXML
+    private TableColumn<Formation, String> imageColumn;
+    @FXML
+    private TableColumn<Formation, String> descriptionColumn;
+      private ListDataformation listdataformation = new ListDataformation();
     /**
      * Initializes the controller class.
      */
@@ -85,6 +112,8 @@ public class FormingController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
+      
+        //////////////////////////////////////////////////////////////////////////////:
             table.setItems(listdata.getPersons());
         NomColonne.setCellValueFactory(cell -> cell.
                 getValue().getNomProperty());
@@ -191,7 +220,37 @@ public class FormingController implements Initializable {
        
        });
      
+         
+            tableformation.setItems(listdataformation.getPersons());
         
+        nameColumn.setCellValueFactory(cell -> cell.
+                getValue().getNomProperty());
+        
+        formateurColumn.setCellValueFactory(cell -> cell.
+                getValue().getFormateur_idProperty().asObject());
+        
+        typeColumn.setCellValueFactory(cell -> cell.
+                getValue().getTypeProperty());
+        
+        priceColumn.setCellValueFactory(cell -> cell.
+                getValue().getPrixProperty().asObject());
+        
+        addressColumn.setCellValueFactory(cell -> cell.
+                getValue().getAddressProperty());  
+        
+        numberColumn.setCellValueFactory(cell -> cell.
+                getValue().getNbmaxProperty().asObject());
+        
+        imageColumn.setCellValueFactory(cell -> cell.
+                getValue().getImageProperty());
+        
+        descriptionColumn.setCellValueFactory(cell -> cell.
+                getValue().getDescriptionProperty());
+         
+        datedebColumn.setCellValueFactory(new PropertyValueFactory<Formation,Date>("Date_deb"));
+        
+        dateendColumn.setCellValueFactory(new PropertyValueFactory<Formation,Date>("Date_fin"));
+
         
     }    
 
@@ -329,6 +388,14 @@ public class FormingController implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(FormingController.class.getName()).log(Level.SEVERE, null, ex);
             }
+    }
+
+  
+
+    @FXML
+    private void InsertFormationAction(ActionEvent event) {
+        
+        
     }
     
 }

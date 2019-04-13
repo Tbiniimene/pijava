@@ -114,9 +114,26 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
+          <Tab text="Forming sessions">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableformation" layoutX="182.0" layoutY="53.0" prefHeight="433.0" prefWidth="782.0">
+                           <columns>
+                              <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+                              <TableColumn fx:id="formateurColumn" prefWidth="94.0" text="coach name" />
+                              <TableColumn fx:id="typeColumn" prefWidth="56.0" text="type" />
+                              <TableColumn fx:id="priceColumn" prefWidth="75.0" text="price" />
+                              <TableColumn fx:id="addressColumn" prefWidth="75.0" text="address" />
+                              <TableColumn fx:id="datedebColumn" prefWidth="71.0" text="debut date" />
+                              <TableColumn fx:id="dateendColumn" prefWidth="79.0" text="end date" />
+                              <TableColumn fx:id="numberColumn" prefWidth="75.0" text="number" />
+                              <TableColumn fx:id="imageColumn" prefWidth="75.0" text="image" />
+                              <TableColumn fx:id="descriptionColumn" prefWidth="106.0" text="Description" />
+                           </columns>
+                        </TableView>
+                        <Button layoutX="16.0" layoutY="455.0" mnemonicParsing="false" onAction="#InsertFormationAction" prefHeight="31.0" prefWidth="136.0" text="Insert" />
+                     </children></AnchorPane>
             </content>
           </Tab>
         </tabs>
