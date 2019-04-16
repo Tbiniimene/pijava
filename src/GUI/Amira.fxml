@@ -111,6 +111,6 @@
       </AnchorPane>
       <Button fx:id="update" layoutX="193.0" layoutY="445.0" mnemonicParsing="false" text="update" />
       <Button fx:id="delete" layoutX="306.0" layoutY="445.0" mnemonicParsing="false" text="detele" />
-      <Button fx:id="addt" layoutX="416.0" layoutY="445.0" mnemonicParsing="false" text="add" />
+      <Button fx:id="addt" layoutX="416.0" layoutY="445.0" mnemonicParsing="false" onAction="#insertAction" text="add" />
    </children>
 </AnchorPane>
