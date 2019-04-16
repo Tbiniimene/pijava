@@ -28,7 +28,7 @@ public class Pidev extends Application {
     public void start(Stage firas) {
        Parent root;
         try {
-            root=FXMLLoader.load(getClass().getResource("/GUI/Admin.fxml"));
+            root=FXMLLoader.load(getClass().getResource("/Front/Home.fxml"));
             Scene scene = new Scene(root);
             firas.setScene(scene);
             firas.show();
