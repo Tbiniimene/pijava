@@ -53,14 +53,7 @@ public class FormingController implements Initializable {
     private Button MaterialBtn;
     @FXML
     private Button AmiraBtn;
-    @FXML
-    private TextField nom;
-    @FXML
-    private TextField prenom;
-    @FXML
-    private TextField type;
-    @FXML
-    private TextField tel;
+   
     @FXML
     private Button update;
     @FXML
@@ -125,103 +118,8 @@ public class FormingController implements Initializable {
           telColonne.setCellValueFactory(cell -> cell.
                 getValue().getTelProperty().asObject());
          
-         
-      table.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue) -> {
-                nom.setText(newValue.getNom());
-                prenom.setText(newValue.getPrenom());
-                type.setText(newValue.getType());
-               tel.setText(String.valueOf(newValue.getTel()));
-              
-                i= newValue.getId_formateur();
-        ////////////////////////////////////////////////////////////////////////////////////////////
-            //UPDATE////    
-                 update.setOnAction(e -> {
-            
-           
-            
-      if ((nom.getText().isEmpty()) && (prenom.getText().isEmpty())&& (type.getText().isEmpty())&& (tel.getText().isEmpty()))
-                   
-              {
-                      Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Information Dialog");
-                alert.setHeaderText(null);
-                alert.setContentText("Les champs sont vide");
-                alert.show();
-                   }
-                   
-           
-           else if ((nom.getText().matches("^[a-zA-Z]+$")) && (prenom.getText().matches("^[a-zA-Z]+$"))&& (type.getText().matches("^[a-zA-Z]+$"))&& (tel.getText().matches("^[0-9]+$")))  {
-               
-               // Formateur c = new Categorie(i,Nom_id1.getText(),Type_id1.getText());
-                numtel=Integer.parseInt(tel.getText());
-           System.out.println(numtel);
-         Formateur c = new Formateur(i,nom.getText(),prenom.getText(),type.getText(),numtel);
-          FormateurDao f = FormateurDao.getInstance();
-
-               f.update(c);
-                
-               
-               
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Information Dialog");
-                alert.setHeaderText(null);
-                alert.setContentText("La categorie a été modifié");
-                alert.show();
-                nom.setText("");
-                prenom.setText("");
-                type.setText("");
-                tel.setText("");
-               
-                
-           }
-           
-           else {
-               Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Information Dialog");
-                alert.setHeaderText(null);
-                alert.setContentText("Erreur");
-                alert.show();
-               
-           }
-          FormingScreen(e);
-                
-        });
-                
-                
-                /////////////////////////////////////////////////////////////////////////////
-                //DELETE//
-      deletebtn.setOnAction(e ->{
-        
-          numtel=Integer.parseInt(tel.getText());
-           System.out.println(numtel);
-         Formateur forma = new Formateur(i,nom.getText(),prenom.getText(),type.getText(),numtel);
-                
-              //  FormateurDao.delete(c);
-             FormateurDao f = FormateurDao.getInstance();
-               
-             f.delete(forma); 
-        
-          Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Information Dialog");
-                alert.setHeaderText(null);
-                alert.setContentText("La categorie a été supprimée");
-                alert.show();
-                nom.setText("");
-                prenom.setText("");
-                type.setText("");
-                tel.setText("");
-                //table.refresh();
-                FormingScreen(e);
-           
-    });
-      
-      
-       
-       
-       });
-     
-         
-            tableformation.setItems(listdataformation.getPersons());
+    
+         tableformation.setItems(listdataformation.getPersons());
         
         nameColumn.setCellValueFactory(cell -> cell.
                 getValue().getNomProperty());
@@ -394,6 +292,23 @@ public class FormingController implements Initializable {
 
     @FXML
     private void InsertFormationAction(ActionEvent event) {
+        
+        try {
+                System.out.println("testttttttttttttt");
+                Parent pagePieChart=FXMLLoader.load(getClass().getResource("/GUI/InsertFormation.fxml"));
+                Scene scene=new Scene(pagePieChart);
+                Stage stage=(Stage) ((Node) event.getSource())
+                        .getScene()
+                        .getWindow();
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(FormingController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+
+    @FXML
+    private void UpdateFormateurAction(ActionEvent event) {
         
         
     }
