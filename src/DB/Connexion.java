@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  */
 public class Connexion {
     
-    private String url="jdbc:mysql://127.0.0.1:3306/pidev";
+    private String url="jdbc:mysql://127.0.0.1:3306/pidev2";
     private String login="root";
     private String pwd="";
     private Connection cnx;
